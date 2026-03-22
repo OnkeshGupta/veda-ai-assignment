@@ -1,0 +1,8 @@
+export default function SettingsPage() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px' }}>
+      <h1 style={{ fontSize: '30px', fontWeight: '700', letterSpacing: '-0.02em', color: '#181818' }}>Settings</h1>
+      <p style={{ color: '#6B7280' }}>Configure your account settings. This page is under construction.</p>
+    </div>
+  );
+}
