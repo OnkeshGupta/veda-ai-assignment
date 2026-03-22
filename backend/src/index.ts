@@ -21,7 +21,13 @@ app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
 app.use(
   cors({
-    origin: config.frontendUrl,
+    origin: function (origin, callback) {
+      if (!origin || origin.includes('vercel.app') || origin.includes('localhost') || origin === config.frontendUrl) {
+        callback(null, true);
+      } else {
+        callback(null, false);
+      }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   })
